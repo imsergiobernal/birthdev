@@ -9,10 +9,10 @@ import { ApiModule } from './api/api.module';
 @Module({
   imports: [
     AngularModule.forRoot({
-      rootPath: join('www/dist/www'),
+      rootPath: join(__dirname, '..', '..', 'view/dist/www'),
     }),
-    // MongooseModule.forRoot('mongodb://mongo:27017/birthdev'),
     ApiModule,
+    // MongooseModule.forRoot('mongodb://mongo:27017/birthdev'),
   ],
   controllers: [],
   providers: [],

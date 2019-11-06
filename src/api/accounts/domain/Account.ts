@@ -2,13 +2,17 @@ import { AccountId } from './Account';
 import { Email, EmailAddress } from './Email';
 
 export type AccountId = EmailAddress;
+export type AccountPassword = string;
 
 export class Account {
 
-    email: Email;
+    private email: Email;
 
-    constructor(accountId?: AccountId) {
-        this.id = accountId;
+    password: AccountPassword;
+
+    constructor(id?: AccountId, password?: AccountPassword) {
+        this.id = id;
+        this.password = password;
     }
 
     setEmailAddress = (address: EmailAddress): void => {

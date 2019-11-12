@@ -5,14 +5,10 @@ import { AccountId } from './domain/Account';
 
 @Injectable()
 export class AccountsService {
-    date = new Date();
 
-    constructor(@Inject(AccountRepository) private accountRepository: AccountRepository) {
-        console.log(this.date);
-    }
+    constructor(private accountRepository: AccountRepository) {}
 
     getAccountById(id: AccountId) {
-        console.log(this.date);
         return this.accountRepository.getById(id);
     }
 

@@ -1,5 +1,5 @@
-import { AccountId } from './../../accounts/domain/Account';
-import { Email } from './../../accounts/domain/Email';
+import { AccountId } from '../../accounts/domain/Account';
+import { Email } from '../../accounts/domain/Email';
 import { Country } from './Country';
 
 export type DeveloperName = string;

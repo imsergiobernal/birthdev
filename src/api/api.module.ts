@@ -1,15 +1,26 @@
 import { Module } from '@nestjs/common';
 
-import { AccountsService } from './accounts/accounts.service';
+import { AccountsModule } from '../accounts/accounts.module';
+import { AuthModule } from '../auth/auth.module';
+import { BirthdaysModule } from '../birthdays/birthdays.module';
 
-import { AccountsModule } from './accounts/accounts.module';
-import { AuthModule } from './auth/auth.module';
-import { BirthdaysModule } from './birthdays/birthdays.module';
-import { ApiController } from './api.controller';
+import { AuthController } from './auth.controller';
+import { AccountsController } from './accounts.controller';
+import { BirthdaysController } from './birthdays.controller';
+import { RootController } from './root.controller';
 
 @Module({
-    providers: [AccountsService],
-    controllers: [ApiController],
-    imports: [AccountsModule, AuthModule, BirthdaysModule],
+    providers: [],
+    controllers: [
+        AccountsController,
+        AuthController,
+        BirthdaysController,
+        RootController,
+    ],
+    imports: [
+        AccountsModule,
+        AuthModule,
+        BirthdaysModule,
+    ],
 })
 export class ApiModule {}
